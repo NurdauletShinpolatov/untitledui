@@ -12,7 +12,7 @@ const links = [
   "Контакты",
 ];
 
-export default function Header() {
+export default function Header({ onAboutPage }) {
   return (
     <Flex
       bg="#fff"
@@ -20,7 +20,11 @@ export default function Header() {
       justifyContent="space-between"
       alignItems="center"
     >
-      <Image src="src\assets\images\logo\logo_purple.png" />
+      <Image
+        src="src\assets\images\logo\logo_purple.png"
+        onClick={() => onAboutPage(false)}
+        cursor="pointer"
+      />
 
       <HStack spacing="20px">
         {links.map((link, i) => (

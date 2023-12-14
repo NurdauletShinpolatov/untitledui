@@ -6,10 +6,10 @@ import Admins from "../../Admins";
 import Goals from "../../Goals";
 import Footer from "../../Footer";
 
-export default function AboutLayout() {
+export default function AboutLayout({ onAboutPage }) {
   return (
     <>
-      <Header />
+      <Header onAboutPage={onAboutPage} />
       <Main />
       <Article />
       <Partners />
