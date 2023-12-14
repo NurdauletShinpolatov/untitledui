@@ -1,10 +1,7 @@
-import { Flex, Button, HStack, VStack, Text } from "@chakra-ui/react";
-import { phoneSVG, untitledUiSVG } from "../../assets/svg";
+import { Flex, Button, HStack, VStack, Text, Image } from "@chakra-ui/react";
+import { phoneSVG } from "../../assets/svg";
 
-const colors = {
-  txtColor: "#475467",
-  btnGreen: "#1CA350",
-};
+const txtColor = "#475467";
 
 const links = [
   "Компания",
@@ -23,16 +20,11 @@ export default function Header() {
       justifyContent="space-between"
       alignItems="center"
     >
-      {untitledUiSVG}
+      <Image src="src\assets\images\logo\logo_purple.png" />
 
       <HStack spacing="20px">
         {links.map((link, i) => (
-          <Button
-            key={i}
-            color={colors.txtColor}
-            variant="link"
-            fontSize="14px"
-          >
+          <Button key={i} color={txtColor} variant="link" fontSize="14px">
             {link}
           </Button>
         ))}
@@ -41,17 +33,17 @@ export default function Header() {
       <HStack spacing="10px">
         {phoneSVG}
         <VStack spacing="5px">
-          <Text color={colors.txtColor} fontWeight="600">
+          <Text color={txtColor} fontWeight="600">
             {"+998 (99) 123 45 67"}
           </Text>
-          <Text color={colors.txtColor} fontWeight="600">
+          <Text color={txtColor} fontWeight="600">
             {"+998 (99) 123 45 67"}
           </Text>
         </VStack>
       </HStack>
 
       <HStack spacing="10px">
-        <Button color={colors.txtColor} variant="ghost">
+        <Button color={txtColor} variant="ghost">
           Log in
         </Button>
         <Button colorScheme="whatsapp" variant="solid">
