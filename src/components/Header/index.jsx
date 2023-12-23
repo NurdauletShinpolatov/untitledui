@@ -1,5 +1,5 @@
 import { Flex, Button, HStack, VStack, Text, Image } from "@chakra-ui/react";
-import { phoneSVG } from "../../assets/svg";
+import { phoneSVG } from "../../../public/assets/svg";
 
 const txtColor = "#475467";
 
