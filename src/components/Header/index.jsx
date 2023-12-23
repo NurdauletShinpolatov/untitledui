@@ -4,12 +4,26 @@ import { phoneSVG } from "../../assets/svg";
 const txtColor = "#475467";
 
 const links = [
-  "Компания",
-  "Дятельность",
-  "Карьера",
-  "Карьера",
-  "Устойчивое развитие",
-  "Контакты",
+  {
+    title: "Компания",
+    linkTo: "/about"
+  },
+  {
+    title: "Дятельность",
+    linkTo: "/activity"
+  },
+  {
+    title: "Карьера",
+    linkTo: "/career"
+  },
+  {
+    title: "Устойчивое развитие",
+    linkTo: "/development"
+  },
+  {
+    title: "Контакты",
+    linkTo: "/contacts"
+  },
 ];
 
 export default function Header({ onAboutPage }) {
@@ -28,8 +42,8 @@ export default function Header({ onAboutPage }) {
 
       <HStack spacing="20px">
         {links.map((link, i) => (
-          <Button key={i} color={txtColor} variant="link" fontSize="14px">
-            {link}
+          <Button key={i} onClick={()=> onAboutPage(link?.linkTo)} color={txtColor} variant="link" fontSize="14px">
+            {link?.title}
           </Button>
         ))}
       </HStack>

@@ -5,10 +5,11 @@ import MainLayout from "./components/layouts/MainLayout";
 
 function App() {
   const [isAboutPage, setIsAboutPage] = useState(false);
+  const [selectedPage, setSelectedPage] = useState("/");
   return (
     <div className="App">
-      {!isAboutPage && <MainLayout onAboutPage={setIsAboutPage} />}
-      {isAboutPage && <AboutLayout onAboutPage={setIsAboutPage} />}
+      {selectedPage == "/" && <MainLayout onAboutPage={setSelectedPage} />}
+      {selectedPage == "/about" && <AboutLayout onAboutPage={setSelectedPage} />}
     </div>
   );
 }
