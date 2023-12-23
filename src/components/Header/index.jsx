@@ -6,27 +6,27 @@ const txtColor = "#475467";
 const links = [
   {
     title: "Компания",
-    linkTo: "/about"
+    linkTo: "/about",
   },
   {
     title: "Дятельность",
-    linkTo: "/activity"
+    linkTo: "/activity",
   },
   {
     title: "Карьера",
-    linkTo: "/career"
+    linkTo: "/career",
   },
   {
     title: "Устойчивое развитие",
-    linkTo: "/development"
+    linkTo: "/development",
   },
   {
     title: "Контакты",
-    linkTo: "/contacts"
+    linkTo: "/contacts",
   },
 ];
 
-export default function Header({ onAboutPage }) {
+export default function Header({ onSetPage }) {
   return (
     <Flex
       bg="#fff"
@@ -36,13 +36,19 @@ export default function Header({ onAboutPage }) {
     >
       <Image
         src="src\assets\images\logo\logo_purple.png"
-        onClick={() => onAboutPage(false)}
+        onClick={() => onSetPage("/")}
         cursor="pointer"
       />
 
       <HStack spacing="20px">
         {links.map((link, i) => (
-          <Button key={i} onClick={()=> onAboutPage(link?.linkTo)} color={txtColor} variant="link" fontSize="14px">
+          <Button
+            key={i}
+            onClick={() => onSetPage(link?.linkTo)}
+            color={txtColor}
+            variant="link"
+            fontSize="14px"
+          >
             {link?.title}
           </Button>
         ))}
